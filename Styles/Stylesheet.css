@@ -1,0 +1,40 @@
+body {
+    background-color: pink;
+    background-repeat: no-repeat;
+
+  }
+
+  h1{
+    font-family: helvetica, sans-serif;
+    font-size: 100%vw;
+    text-align: center;
+    color: Blue;
+    
+  }
+
+  h2{
+    font-family: helvetica, sans-serif;
+    font-size: 80%vw;
+    text-align: center;
+    color: red;
+  }
+
+  
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container form {
+    margin-top: 60%; /* Adjust as needed */
+}
+
+.container form label,
+.container form input[type="text"],
+.container form input[type="password"],
+.container form input[type="submit"] {
+    display: block;
+    margin-bottom: 0.5%;
+}

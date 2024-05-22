@@ -1,8 +1,21 @@
 <?php
-// Assuming you have established a database connection
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Database configuration
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "biodxdb";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
 // Fetch product data from the database
-$sql = "SELECT name, description, image_reference FROM product";
+$sql = "SELECT name, description, image FROM products";
 $result = mysqli_query($conn, $sql);
 
 // Check if there are any products in the database
@@ -31,4 +44,5 @@ if (mysqli_num_rows($result) > 0) {
 
 // Close the database connection
 mysqli_close($conn);
+}
 ?>

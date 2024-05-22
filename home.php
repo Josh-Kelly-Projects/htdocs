@@ -23,16 +23,7 @@
   <div class="container" style="padding: 40px;">
     <div class="cointainer-fluid">
       <div class="row">
-        <div class="col-sm-3">
-          <div class="card" style="width: 18rem;">
-            <img src="Images/biodx logo.jpg" class="card-img-top" alt="">
-            <div class="card-body">
-              <h5 class="card-title">Product 1</h5>
-              <p class="card-text"> this is the product must buy</p>
-              <a href="productpage.php" class="btn btn-primary">Purchase</a>
-            </div>
-          </div>
-        </div>
+      <?php include 'fetchcards.php';?>
 
         <div class="col-sm-3">
           <div class="card" style="width: 18rem;">

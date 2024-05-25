@@ -10,7 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <title>biodx eccommerse home</title>
+  <title>biodx eccommerse checkout</title>
 </head>
 
 <body>
@@ -20,16 +20,6 @@
   <?php include 'navbar.php'; ?>
 
 
-
-
-  <div class="container" style="padding: 40px;">
-    <div class="cointainer-fluid">
-      <div class="row">
-        <?php include 'fetchcards.php'; ?>
-      </div>
-
-    </div>
-  </div>
 
 
   <!-- Optional JavaScript; choose one of the two! -->

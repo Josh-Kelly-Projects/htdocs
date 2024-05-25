@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Database configuration
     $servername = "localhost";
@@ -19,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 
     // Fetch product data from the database
-    $sql = "SELECT name, description, image FROM products";
+    $sql = "SELECT productid, name, description, image FROM products";
     $result = $conn->query($sql);
 
     // Check if there are any products in the database
@@ -29,9 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     } elseif ($result->num_rows > 0) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
+            $product_id = $row["productid"];
             $name = $row["name"];
             $description = $row["description"];
             $image_reference = $row["image"];
+            
             ?>
             <div class="col-sm-3">
                 <div class="card" style="width: 18rem;">
@@ -39,7 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $name; ?></h5>
                         <p class="card-text"><?php echo $description; ?></p>
-                        <a href="productpage.php" class="btn btn-primary">Purchase</a>
+                        
+                        <form action="productpage.php" method="post">
+                            <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product_id);?>">
+                            <input type="hidden" name="name" value="<?php echo htmlspecialchars($name);?>">
+                            <button class="btn btn-primary">Purchase</button>
+                        </form>
                     </div>
                 </div>
             </div>

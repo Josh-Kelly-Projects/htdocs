@@ -1,6 +1,6 @@
 
 
-<?php include 'loginscript.php'; ?>
+<?php include 'loginscript.php';?>
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

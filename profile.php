@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +17,23 @@
 <?php include 'navbar.php';?>
     
 
-    <h1>Welcome to your Profile Page</h1>
-    <!-- Other content of your profile page -->
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    // Redirect to login page if not logged in
+    header("Location: login.php");
+    exit;
+}
+
+// Retrieve the username from the session
+$username = $_SESSION['username'];
+
+// Now you can use $username to display or use the username as needed in your profile page
+echo "<h1>Welcome, $username</h1>";
+?>
 </body>
 </html>

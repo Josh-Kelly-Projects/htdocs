@@ -1,5 +1,9 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Database configuration
     $servername = "localhost";
     $username = "root";
@@ -14,35 +18,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-// Fetch product data from the database
-$sql = "SELECT name, description, image FROM products";
-$result = mysqli_query($conn, $sql);
+    // Fetch product data from the database
+    $sql = "SELECT name, description, image FROM products";
+    $result = $conn->query($sql);
 
-// Check if there are any products in the database
-if (mysqli_num_rows($result) > 0) {
-    // Output data of each row
-    while ($row = mysqli_fetch_assoc($result)) {
-        $name = $row["name"];
-        $description = $row["description"];
-        $image_reference = $row["image_reference"];
-        ?>
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img src="Images/<?php echo $image_reference; ?>" class="card-img-top" alt="<?php echo $name; ?>">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $name; ?></h5>
-                    <p class="card-text"><?php echo $description; ?></p>
-                    <a href="productpage.php" class="btn btn-primary">Purchase</a>
+    // Check if there are any products in the database
+    if ($result === false) {
+        echo "Error executing the query: " . $conn->error;
+
+    } elseif ($result->num_rows > 0) {
+        // Output data of each row
+        while ($row = $result->fetch_assoc()) {
+            $name = $row["name"];
+            $description = $row["description"];
+            $image_reference = $row["image"];
+            ?>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="Images/<?php echo $image_reference; ?>" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $name; ?></h5>
+                        <p class="card-text"><?php echo $description; ?></p>
+                        <a href="productpage.php" class="btn btn-primary">Purchase</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <?php
+            <?php
+        }
+    } else {
+        echo "0 results";
     }
-} else {
-    echo "0 results";
-}
 
-// Close the database connection
-mysqli_close($conn);
+    // Close the database connection
+    $conn->close();
 }
 ?>

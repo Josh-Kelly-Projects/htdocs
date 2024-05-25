@@ -25,14 +25,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $result = $conn->query($sql);
 
-    if ($result->num_rows == 1) {
-        // User exists, set session variables
-        $_SESSION['username'] = $username;
-        header("Location: home.php"); // Redirect to dashboard
-        exit(); // Stop script execution after redirection
+    if ($result) {
+        // Check if user exists
+        if ($result->num_rows == 1) {
+            // User exists, set session variables
+            $_SESSION['username'] = $username;
+            header("Location: home.php"); // Redirect to dashboard
+            exit(); // Stop script execution after redirection
+        } else {
+            // User doesn't exist or invalid credentials
+            echo "Invalid username or password.";
+        }
     } else {
-        // User doesn't exist or invalid credentials
-        echo "Invalid username or password.";
+        // Error in query execution
+        echo "Error: " . $conn->error;
     }
 
     $conn->close();

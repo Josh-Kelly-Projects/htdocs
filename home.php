@@ -19,13 +19,10 @@
 
   <?php include 'navbar.php'; ?>
 
-
-
-
   <div class="container" style="padding: 40px;">
     <div class="cointainer-fluid">
       <div class="row">
-        <?php include 'fetchcards.php'; ?>
+        <?php include 'fetchcardsforhome.php'; ?>
       </div>
 
     </div>

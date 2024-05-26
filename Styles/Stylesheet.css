@@ -1,41 +1,40 @@
 body {
-    background-color: #fc6203;
-    background-repeat: no-repeat;
+  background-color: #fc6203;
+  background-repeat: no-repeat;
 
-  }
+}
 
-  h1{
-    font-family: helvetica, sans-serif;
-    font-size: 100%vw;
-    text-align: center;
-    color: Blue;
-    
-  }
+h1 {
+  font-family: helvetica, sans-serif;
+  font-size: 100%vw;
+  text-align: center;
+  color: Blue;
 
-  h2{
-    font-family: helvetica, sans-serif;
-    font-size: 80%vw;
-    text-align: center;
-    color: black;
-  }
+}
 
-  button{
-    padding-top: 10%;
-    align-items: center;
-  }
+h2 {
+  font-family: helvetica, sans-serif;
+  font-size: 80%vw;
+  text-align: center;
+  color: black;
+}
 
-  
-
-  .container {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    background-color: #fc6203;
+button {
+  padding-top: 10%;
+  align-items: center;
 }
 
 
 
-.cointainer-fluid{
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
   background-color: #fc6203;
 }
 
+
+
+.cointainer-fluid {
+  background-color: #fc6203;
+}

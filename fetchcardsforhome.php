@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $name = $row["name"];
             $description = $row["description"];
             $image_reference = $row["image"];
-            
+
             ?>
             <div class="col-sm-3">
                 <div class="card" style="width: 18rem;">
@@ -37,10 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $name; ?></h5>
                         <p class="card-text"><?php echo $description; ?></p>
-                        
+
                         <form action="productpage.php" method="post">
-                            <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product_id);?>">
-                            <input type="hidden" name="name" value="<?php echo htmlspecialchars($name);?>">
+                            <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product_id); ?>">
+                            <input type="hidden" name="name" value="<?php echo htmlspecialchars($name); ?>">
                             <button class="btn btn-primary">Purchase</button>
                         </form>
                     </div>

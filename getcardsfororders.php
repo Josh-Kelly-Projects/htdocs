@@ -57,7 +57,7 @@ if ($result === false) {
                         </form>
                     <?php endif; ?>
 
-                    <?php if($order_status !== "DELIVERED"): ?>
+                    <?php if ($order_status !== "DELIVERED"): ?>
                         <form action="changeorder.php" method="post">
                             <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
                             <button type="submit" class="btn btn-primary">Change Order</button>

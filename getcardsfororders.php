@@ -38,10 +38,9 @@ if ($result === false) {
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $username; ?></h5>
-                    <p class="card-text"><?php echo $delivery_date; ?></p>
-                    <p class="card-text"><?php echo $order_status; ?></p>
-                    <p class="card-text"><?php echo $order_size; ?> tons</p>
+                    <p class="card-text">Delivery Date: <?php echo $delivery_date; ?></p>
+                    <p class="card-text">Order Status: <?php echo $order_status; ?></p>
+                    <p class="card-text">Order Size: <?php echo $order_size; ?> tons</p>
 
                     <?php if ($payment_recived == 0): ?>
                         <p class="card-text">Payment not made</p>
@@ -49,14 +48,22 @@ if ($result === false) {
                         <p class="card-text">Payment made, thank you</p>
                     <?php endif; ?>
 
-                    <p class="card-text">R<?php echo $sale_amount; ?></p>
+                    <p class="card-text">Cost: R<?php echo $sale_amount; ?></p>
 
                     <?php if ($order_status = "PENDING"): ?>
-                        <form action="cancel_order.php" method="post">
+                        <form action="cancelorder.php" method="post">
                             <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
                             <button type="submit" class="btn btn-danger">Cancel Order</button>
                         </form>
                     <?php endif; ?>
+
+                    <?php if($order_status !== "DELIVERED"): ?>
+                        <form action="changeorder.php" method="post">
+                            <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
+                            <button type="submit" class="btn btn-primary">Change Order</button>
+                        </form>
+                    <?php endif; ?>
+
                 </div>
             </div>
         </div>

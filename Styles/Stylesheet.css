@@ -1,5 +1,5 @@
 body {
-    background-color: pink;
+    background-color: #fc6203;
     background-repeat: no-repeat;
 
   }
@@ -16,7 +16,12 @@ body {
     font-family: helvetica, sans-serif;
     font-size: 80%vw;
     text-align: center;
-    color: red;
+    color: black;
+  }
+
+  button{
+    padding-top: 10%;
+    align-items: center;
   }
 
   
@@ -25,16 +30,12 @@ body {
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    background-color: #fc6203;
 }
 
-.container form {
-    margin-top: 60%; /* Adjust as needed */
+
+
+.cointainer-fluid{
+  background-color: #fc6203;
 }
 
-.container form label,
-.container form input[type="text"],
-.container form input[type="password"],
-.container form input[type="submit"] {
-    display: block;
-    margin-bottom: 0.5%;
-}

@@ -34,7 +34,7 @@
       <input type="submit" value="Login">
     </form>
   </div>
-
+  <?php include 'footer.php'; ?>
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

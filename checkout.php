@@ -20,7 +20,7 @@
 
   <?php include 'navbar.php'; ?>
 
-
+  <?php include 'footer.php'; ?>
 
 
   <!-- Optional JavaScript; choose one of the two! -->

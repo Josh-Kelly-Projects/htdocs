@@ -38,3 +38,36 @@ button {
 .cointainer-fluid {
   background-color: #fc6203;
 }
+
+/* footer styling */
+body{
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container.profile-container{
+  flex:1;
+}
+
+.sticky-footer{
+  background-color: black;
+  padding: 20px 0;
+}
+
+.sticky-footer table{
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.sticky-footer th,
+.sticky-footer td{
+  padding: 8px;
+}
+
+.rights-reserved{
+  text-align: center;
+  margin-top: 10px;
+}

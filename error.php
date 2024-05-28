@@ -21,7 +21,7 @@
   <?php include 'navbar.php'; ?>
 
   <h2> this thing do be broken</h2>
-
+  <?php include 'footer.php'; ?>
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

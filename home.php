@@ -29,6 +29,8 @@
     </div>
   </div>
 
+  <?php include 'footer.php'; ?>
+
 
   <!-- Optional JavaScript; choose one of the two! -->
 

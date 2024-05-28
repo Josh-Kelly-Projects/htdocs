@@ -35,7 +35,7 @@
         <!-- Card container -->
         <div id="cardContainer" class="row mt-3"></div>
     </div>
-
+    <?php include 'footer.php'; ?>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>

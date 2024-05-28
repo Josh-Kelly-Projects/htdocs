@@ -36,6 +36,8 @@
   // Now you can use $username to display or use the username as needed in your profile page
   echo "<h1>Welcome, $username</h1>";
   ?>
+
+<?php include 'footer.php'; ?>
 </body>
 
 </html>

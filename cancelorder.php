@@ -66,7 +66,7 @@ if (isset($_POST['order_id'])) {
 
         </div>
     </div>
-
+    <?php include 'footer.php'; ?>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

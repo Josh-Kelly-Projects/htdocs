@@ -38,6 +38,7 @@ if (isset($_POST['order_id'])) {
             <div class="row">
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    echo"this thing is actully gonna be easy";
                     // Database configuration
                     $servername = "localhost";
                     $username = "root";
@@ -53,8 +54,8 @@ if (isset($_POST['order_id'])) {
                     }
 
                     // Fetch product data from the database
-                    $sql = "SELECT concentration, costperton, description, skuid FROM productskus ";
-                    $result = $conn->query($sql);
+                    $sql = "UPDATE `orders` SET `orderstatus`='CANCELLED' WHERE orderid = $order_id;";
+                    $conn->query($sql);
 
 
 

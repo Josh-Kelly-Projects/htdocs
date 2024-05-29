@@ -1,6 +1,5 @@
 <?php
-session_start();
-
+echo"the good one is running";
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database configuration
@@ -27,23 +26,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result) {
         // Check if user exists
-        if ($result->num_rows == 1) {
-            // User exists, set session variables
-            $_SESSION['username'] = $username;
-            $row = $result->fetch_assoc();
-            $_employee = $row["employee"];
-            
-            if ($_employee == 1) {
-                header("Location: adminarea.php"); // Redirect to adminarea if employee
-                exit(); // Stop script execution after redirection
-            } else {
-                header("Location: home.php"); // Redirect to dashboard as user is not employee
-                exit(); // Stop script execution after redirection
-            }
+        if ($result->num_rows == 0) {
+            echo"and the if still works";
+            // User doesn't exist, register the user
+            $sql = "INSERT INTO `users` (`username`, `password`, `employee`) VALUES ('$username', '$password', '0');";
+            $conn->query($sql);
+
+            header("Location: home.php"); // Redirect to dashboard as user is not employee
+            exit(); // Stop script execution after redirection
+
 
         } else {
             // User doesn't exist or invalid credentials
-            echo "Invalid username or password.";
+            echo "this user already exists";
         }
     } else {
         // Error in query execution

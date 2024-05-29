@@ -23,17 +23,18 @@
 
 
   <div class="container">
-    <h2>Login</h2>
-    <form action="loginscript.php" method="post">
+    <h2>Register</h2>
+    <form action="registerscript.php" method="post">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
       <br>
       <br>
-      <input type="submit" value="Login">
+      <input type="submit" value="register">
     </form>
   </div>
+  
   <?php include 'footer.php'; ?>
   <!-- Optional JavaScript; choose one of the two! -->
 
@@ -50,3 +51,4 @@
 </body>
 
 </html>
+

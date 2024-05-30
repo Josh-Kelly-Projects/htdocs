@@ -28,7 +28,7 @@
             </div>
             <!-- Button to populate cards -->
             <div class="col-md-6">
-                <button id="populateBtn" class="btn btn-primary">Populate Cards</button>
+                <button id="populateBtn" class="btn btn-primary">Get Orders</button>
             </div>
         </div>
 
@@ -36,6 +36,7 @@
         <div id="cardContainer" class="row mt-3"></div>
     </div>
     <?php include 'footer.php'; ?>
+    
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>

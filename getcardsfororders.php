@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch product data from the database
-$sql = "SELECT orderid, deliverydate, orderstatus, ordersizetons, paymentrecived, saleamount 
+$sql = "SELECT orderid, deliverydate, orderstatus, ordersizetons, paymentrecived, saleamount, deliveryaddress
 FROM orders  
 WHERE username like '$username';";
 $result = $conn->query($sql);
@@ -34,6 +34,7 @@ if ($result === false) {
         $order_size = $row["ordersizetons"];
         $payment_recived = $row["paymentrecived"];
         $sale_amount = $row["saleamount"];
+        $delivery_address = $row["deliveryaddress"];
         ?>
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
@@ -41,6 +42,7 @@ if ($result === false) {
                     <p class="card-text">Delivery Date: <?php echo $delivery_date; ?></p>
                     <p class="card-text">Order Status: <?php echo $order_status; ?></p>
                     <p class="card-text">Order Size: <?php echo $order_size; ?> tons</p>
+                    <p class="card-text">Delivery Adderss:<br> <?php echo $delivery_address; ?></p>
 
                     <?php if ($payment_recived == 0): ?>
                         <p class="card-text">Payment not made</p>
@@ -50,14 +52,14 @@ if ($result === false) {
 
                     <p class="card-text">Cost: R<?php echo $sale_amount; ?></p>
 
-                    <?php if ($order_status = "PENDING"): ?>
+                    <?php if ($order_status == "PENDING"): ?>
                         <form action="cancelorder.php" method="post">
                             <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
                             <button type="submit" class="btn btn-danger">Cancel Order</button>
                         </form>
                     <?php endif; ?>
 
-                    <?php if ($order_status !== "DELIVERED"): ?>
+                    <?php if ($order_status !== "DELIVERED" && $order_status !== "CANCELLED"): ?>
                         <form action="changeorder.php" method="post">
                             <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
                             <button type="submit" class="btn btn-primary">Change Order</button>

@@ -20,47 +20,21 @@
 
   <?php include 'navbar.php'; ?>
 
-  <div class="container" style="padding: 40px;">
-    <div class="cointainer-fluid">
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">@</span>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-          aria-describedby="basic-addon1">
-      </div>
-
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-          aria-describedby="basic-addon2">
-        <span class="input-group-text" id="basic-addon2">@example.com</span>
-      </div>
-
-      <label for="basic-url" class="form-label">Your vanity URL</label>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text">$</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-        <span class="input-group-text">.00</span>
-      </div>
-
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-        <span class="input-group-text">@</span>
-        <input type="text" class="form-control" placeholder="Server" aria-label="Server">
-      </div>
-
-      <div class="input-group">
-        <span class="input-group-text">With textarea</span>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-      </div>
-
-      
-
-    </div>
+  <div class="input-group mb-3">
+    <input type="text" id="username" name="username" class="form-control" placeholder="Username" aria-label="Username"
+      aria-describedby="basic-addon1">
   </div>
+
+  <div class="input-group mb-3">
+    <input type="text" id="password" name="password" class="form-control" placeholder="Password" aria-label="Password"
+      aria-describedby="basic-addon1">
+  </div>
+
+  <form action="addemployee.php" method="post">
+    <input type="hidden" name="username" value="" id="hidden-username">
+    <input type="hidden" name="password" value="" id="hidden-password">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
   <?php include 'footer.php'; ?>
 
@@ -78,5 +52,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 </body>
+<script>
+    // JavaScript to set hidden input values before form submission
+    document.querySelector('form').addEventListener('submit', function (event) {
+        // Get username and password values from input fields
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
 
+        // Set the values to the hidden input fields
+        document.getElementById('hidden-username').value = username;
+        document.getElementById('hidden-password').value = password;
+    });
+</script>
 </html>

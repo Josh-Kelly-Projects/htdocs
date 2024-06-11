@@ -1,11 +1,13 @@
 <?php
 
 // Check if product ID is set in the URL
-if (isset($_POST['order_id'])) {
-    $order_id = $_POST['order_id'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data using $_POST superglobal
+    $productname = $_POST["productname"];
+    $productdescription = $_POST["productdescription"];
 
 } else {
-    // Redirect if product ID is not set
+    // Redirect if feilds not set
     header("Location: error.php");
     exit;
 }
@@ -28,15 +30,16 @@ if (isset($_POST['order_id'])) {
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
 
     <h1>
-        <label >Your order has been canceled</label>
+        <label>Product Added</label>
     </h1>
 
-
+    <?php include 'navbar.php'; ?>
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<p>product name: $productname</p>";
+    echo "<p>description: $productdescription</p>";
+    /*
         // Database configuration
         $servername = "localhost";
         $username = "root";
@@ -59,7 +62,9 @@ if (isset($_POST['order_id'])) {
 
         // Close the database connection
         $conn->close();
-    }
+    */
+
+
     ?>
 
     <?php include 'footer.php'; ?>

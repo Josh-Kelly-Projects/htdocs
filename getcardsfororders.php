@@ -58,14 +58,6 @@ if ($result === false) {
                             <button type="submit" class="btn btn-danger">Cancel Order</button>
                         </form>
                     <?php endif; ?>
-
-                    <?php if ($order_status !== "DELIVERED" && $order_status !== "CANCELLED"): ?>
-                        <form action="changeorder.php" method="post">
-                            <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
-                            <button type="submit" class="btn btn-primary">Change Order</button>
-                        </form>
-                    <?php endif; ?>
-
                 </div>
             </div>
         </div>

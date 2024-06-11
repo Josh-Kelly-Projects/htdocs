@@ -1,11 +1,13 @@
 <?php
 
 // Check if product ID is set in the URL
-if (isset($_POST['order_id'])) {
-    $order_id = $_POST['order_id'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data using $_POST superglobal
+    $usename = $_POST["username"];
+    $password = $_POST["password"];
 
 } else {
-    // Redirect if product ID is not set
+    // Redirect if feilds not set
     header("Location: error.php");
     exit;
 }
@@ -28,38 +30,41 @@ if (isset($_POST['order_id'])) {
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
 
     <h1>
-        <label >Your order has been canceled</label>
+        <label>New Employee Added</label>
     </h1>
 
-
+    <?php include 'navbar.php'; ?>
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Database configuration
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "biodxdb";
+    echo "<p>username: $username</p>";
+    echo "<p>password: $password</p>";
+    // Database configuration
+    /*
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "biodxdb";
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $database);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $database);
 
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        // Cancel the order
-        $sql = "UPDATE `orders` SET `orderstatus`='CANCELLED' WHERE orderid = $order_id;";
-        $conn->query($sql);
-
-
-
-        // Close the database connection
-        $conn->close();
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
+
+    // Cancel the order
+    $sql = "UPDATE `orders` SET `orderstatus`='CANCELLED' WHERE orderid = $order_id;";
+    $conn->query($sql);
+
+
+
+    // Close the database connection
+    $conn->close();
+    */
+
+
     ?>
 
     <?php include 'footer.php'; ?>

@@ -1,11 +1,15 @@
 <?php
 
 // Check if product ID is set in the URL
-if (isset($_POST['order_id'])) {
-    $order_id = $_POST['order_id'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data using $_POST superglobal
+    $concentration = $_POST["concentration"];
+    $skudescription = $_POST["skudescription"];
+    $productid = $_POST["productid"];
+    $cost = $_POST["cost"];
 
 } else {
-    // Redirect if product ID is not set
+    // Redirect if feilds not set
     header("Location: error.php");
     exit;
 }
@@ -29,43 +33,43 @@ if (isset($_POST['order_id'])) {
 
 <body>
 
-
+    <h1>
+        <label>Product SKU Added</label>
+    </h1>
 
     <?php include 'navbar.php'; ?>
+    <?php
+    echo "<p>concentration: $concentration</p>";
+    echo "<p>description: $skudescription</p>";
+    echo "<p>product id: $productid</p>";
+    echo "<p>cost per ton: $cost</p>";
+    /*
+    // Database configuration
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "biodxdb";
 
-    <div class="container" style="padding: 40px;">
-        <div class="cointainer-fluid">
-            <div class="row">
-                <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    // Database configuration
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $database = "biodxdb";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $database);
 
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $database);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
-
-                    // Fetch product data from the database
-                    $sql = "SELECT concentration, costperton, description, skuid FROM productskus ";
-                    $result = $conn->query($sql);
+    // Cancel the order
+    $sql = "INSERT INTO `productskus` (`skuid`, `concentration`, `description`, `productid`, `costperton`) VALUES (NULL, '6%', 'THis is just a test again', '2', '40000');";
+    $conn->query($sql);
 
 
 
-                    // Close the database connection
-                    $conn->close();
-                }
-                ?>
-            </div>
+    // Close the database connection
+    $conn->close();
+*/
 
-        </div>
-    </div>
+    ?>
+
     <?php include 'footer.php'; ?>
     <!-- Optional JavaScript; choose one of the two! -->
 

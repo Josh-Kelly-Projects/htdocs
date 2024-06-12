@@ -3,7 +3,7 @@
 $servername = "localhost";
 $dbusername = "root";
 $password = "1234Good!";
-$database = "biodxdb";
+$database = "id22309664_biodxdb";
 
 //getting the username from the button press
 $username = $_GET['username'];

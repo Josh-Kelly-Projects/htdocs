@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $servername = "localhost";
     $username = "root";
     $password = "1234Good!";
-    $database = "biodxdb";
+    $database = "id22309664_biodxdb";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             ?>
             <div class="col-sm-3">
                 <div class="card" style="width: 18rem;">
-                    <img src="Images/<?php echo $image_reference; ?>" class="card-img-top" alt="">
+                    <img src="./Images/<?php echo $image_reference; ?>" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $name; ?></h5>
                         <p class="card-text"><?php echo $description; ?></p>

@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $sqlusername = "root";
     $password = "1234Good!";
-    $database = "biodxdb";
+    $database = "id22309664_biodxdb";
 
     // Create connection
     $conn = new mysqli($servername, $sqlusername, $password, $database);

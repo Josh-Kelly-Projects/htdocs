@@ -43,7 +43,7 @@ if (isset($_POST['product_id'])) {
                     $servername = "localhost";
                     $username = "root";
                     $password = "1234Good!";
-                    $database = "biodxdb";
+                    $database = "id22309664_biodxdb";
 
                     // Create connection
                     $conn = new mysqli($servername, $username, $password, $database);

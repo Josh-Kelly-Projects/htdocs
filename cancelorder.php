@@ -40,7 +40,7 @@ if (isset($_POST['order_id'])) {
         // Database configuration
         $servername = "localhost";
         $username = "root";
-        $password = "";
+        $password = "1234Good!";
         $database = "biodxdb";
 
         // Create connection

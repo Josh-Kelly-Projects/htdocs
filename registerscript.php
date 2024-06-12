@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database configuration
     $servername = "localhost";
     $sqlusername = "root";
-    $sqlpassword = "";
+    $sqlpassword = "1234Good!";
     $database = "biodxdb";
 
     // Create connection
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO `users` (`username`, `password`, `employee`) VALUES ('$username', '$password', '0');";
             $conn->query($sql);
 
-            header("Location: home.php"); // Redirect to dashboard as user is not employee
+            header("Location: index.php"); // Redirect to dashboard as user is not employee
             exit(); // Stop script execution after redirection
 
 

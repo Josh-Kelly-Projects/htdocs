@@ -2,7 +2,7 @@
 // Database configuration
 $servername = "localhost";
 $dbusername = "root";
-$password = "";
+$password = "1234Good!";
 $database = "biodxdb";
 
 //getting the username from the button press

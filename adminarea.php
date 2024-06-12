@@ -149,7 +149,7 @@
     <script>
         function goHome() {
             // Redirect to home
-            window.location.href = 'home.php';
+            window.location.href = 'index.php';
         }
     </script>
     <div>

@@ -31,38 +31,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
+    
+
+    <?php include 'navbar.php'; ?>
     <h1>
         <label>Product Added</label>
     </h1>
-
-    <?php include 'navbar.php'; ?>
     <?php
     echo "<p>product name: $productname</p>";
     echo "<p>description: $productdescription</p>";
-    /*
-        // Database configuration
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "biodxdb";
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $database);
+    // Database configuration
+    $servername = "localhost";
+    $sqlusername = "root";
+    $sqlpassword = "";
+    $database = "biodxdb";
 
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+    // Create connection
+    $conn = new mysqli($servername, $sqlusername, $sqlpassword, $database);
 
-        // Cancel the order
-        $sql = "UPDATE `orders` SET `orderstatus`='CANCELLED' WHERE orderid = $order_id;";
-        $conn->query($sql);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // insert the employee
+    $sql = "INSERT INTO `products` (`productid`, `name`, `description`, `image`) VALUES (NULL, '$productname', '$productdescription', 'biodx logo.jpg');";
+    $conn->query($sql);
 
 
 
-        // Close the database connection
-        $conn->close();
-    */
+    // Close the database connection
+    $conn->close();
+
 
 
     ?>

@@ -19,6 +19,13 @@ h2 {
   color: black;
 }
 
+h2 {
+  font-family: helvetica, sans-serif;
+  font-size: 60%vw;
+  text-align: center;
+  color: black;
+}
+
 button {
   padding-top: 10%;
   align-items: center;

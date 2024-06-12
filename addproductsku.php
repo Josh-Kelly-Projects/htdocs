@@ -33,40 +33,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
+    
+
+    <?php include 'navbar.php'; ?>
+    
     <h1>
         <label>Product SKU Added</label>
     </h1>
-
-    <?php include 'navbar.php'; ?>
     <?php
     echo "<p>concentration: $concentration</p>";
     echo "<p>description: $skudescription</p>";
     echo "<p>product id: $productid</p>";
     echo "<p>cost per ton: $cost</p>";
-    /*
+
     // Database configuration
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $sqlusername = "root";
+    $sqlpassword = "";
     $database = "biodxdb";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $database);
+    $conn = new mysqli($servername, $sqlusername, $sqlpassword, $database);
 
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Cancel the order
-    $sql = "INSERT INTO `productskus` (`skuid`, `concentration`, `description`, `productid`, `costperton`) VALUES (NULL, '6%', 'THis is just a test again', '2', '40000');";
+    // insert the employee
+    $sql = "INSERT INTO `productskus` (`skuid`, `concentration`, `description`, `productid`, `costperton`) VALUES (NULL, '$concentration', '$skudescription', '$productid', '$cost');";
     $conn->query($sql);
 
 
 
     // Close the database connection
     $conn->close();
-*/
+
 
     ?>
 

@@ -113,12 +113,12 @@
                             <h5 class="card-title">Add a Payment</h5>
 
                             <div class="input-group mb-3">
-                                <input type="text" id="userpay" name="userpay" class="form-control"
-                                    placeholder="Username" aria-label="userpay" aria-describedby="basic-addon1">
+                                <input type="text" id="orderid" name="orderid" class="form-control"
+                                    placeholder="Order ID" aria-label="orderid" aria-describedby="basic-addon1">
                             </div>
 
                             <form action="addpayment.php" method="post" id="payment-btn">
-                                <input type="hidden" name="userpay" value="" id="hidden-userpay">
+                                <input type="hidden" name="orderid" value="" id="hidden-orderid">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
@@ -221,10 +221,10 @@
     // JavaScript to set hidden input values before form submission
     document.getElementById('payment-btn').addEventListener('submit', function (event) {
         // Get username and password values from input fields
-        var userpay = document.getElementById('userpay').value;
+        var orderid = document.getElementById('orderid').value;
 
         // Set the values to the hidden input fields
-        document.getElementById('hidden-userpay').value = userpay;
+        document.getElementById('hidden-orderid').value = orderid;
     });
 </script>
 

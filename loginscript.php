@@ -5,12 +5,12 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database configuration
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $sqlusername = "root";
+    $sqlpassword = "";
     $database = "biodxdb";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $database);
+    $conn = new mysqli($servername, $sqlusername, $sqlpassword, $database);
 
     // Check connection
     if ($conn->connect_error) {

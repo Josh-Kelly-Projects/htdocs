@@ -31,38 +31,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
+    
+
+    <?php include 'navbar.php'; ?>
     <h1>
         <label>New Employee Added</label>
     </h1>
-
-    <?php include 'navbar.php'; ?>
     <?php
     echo "<p>username: $username</p>";
     echo "<p>password: $password</p>";
     // Database configuration
-    /*
+    
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $sqlusername = "root";
+    $sqlpassword = "";
     $database = "biodxdb";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $database);
+    $conn = new mysqli($servername, $sqlusername, $sqlpassword, $database);
 
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Cancel the order
-    $sql = "UPDATE `orders` SET `orderstatus`='CANCELLED' WHERE orderid = $order_id;";
+    // insert the employee
+    $sql = "INSERT INTO `users` (`username`, `password`, `employee`) VALUES ('$username', '$password', '1');";
     $conn->query($sql);
 
 
 
     // Close the database connection
     $conn->close();
-    */
+
 
 
     ?>

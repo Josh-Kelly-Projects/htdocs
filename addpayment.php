@@ -3,7 +3,7 @@
 // Check if product ID is set in the URL
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data using $_POST superglobal
-    $userpay = $_POST["userpay"];
+    $orderid = $_POST["orderid"];
 
 } else {
     // Redirect if feilds not set
@@ -30,38 +30,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <h1>
-        <label>Payment Added</label>
-    </h1>
+    
 
 
     <?php include 'navbar.php'; ?>
+    <h1>
+        <label>Payment Added</label>
+    </h1>
     <?php
-    echo "<p>Username: $userpay</p>";
-    /*
-        // Database configuration
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "biodxdb";
+    echo "<p>Order ID: $orderid</p>";
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $database);
+    // Database configuration
+    $servername = "localhost";
+    $sqlusername = "root";
+    $sqlpassword = "";
+    $database = "biodxdb";
 
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+    // Create connection
+    $conn = new mysqli($servername, $sqlusername, $sqlpassword, $database);
 
-        // Cancel the order
-        $sql = "UPDATE `orders` SET `orderstatus`='CANCELLED' WHERE orderid = $order_id;";
-        $conn->query($sql);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // insert the employee
+    $sql = "UPDATE `orders` SET `paymentrecived` = '1' WHERE `orders`.`orderid` = $orderid;";
+    $conn->query($sql);
 
 
 
-        // Close the database connection
-        $conn->close();
-    */
+    // Close the database connection
+    $conn->close();
+
 
     ?>
 

@@ -2,7 +2,7 @@
 
 <div class="container-fluid sticky-footer">
     <div class="container">
-        <div class="row justify-center tabless">
+        <div class="row justify-content-center">
             <table>
                 <tr>
                     <th>Contact us:</th>

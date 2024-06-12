@@ -73,14 +73,16 @@ if (isset($_POST['product_id'])) {
                             <div class="col-sm-3">
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        <h5 class="card-title"><?php echo $name; ?>             <?php echo $concentration; ?></h5>
+                                        <h5 class="card-title"><?php echo $name; ?>
+                                            <?php echo $concentration; ?>
+                                        </h5>
                                         <p class="card-text"><?php echo $description; ?></p>
                                         <p class="card-text">The cost per ton is: R<?php echo $cost_per_ton; ?></p>
 
                                         <form action="checkout.php" method="post">
-                                            <input type="hidden" name="product_id"
+                                            <input type="hidden" name="productskuid"
                                                 value="<?php echo htmlspecialchars($productsku_id); ?>">
-                                            <button class="btn btn-primary">Purchase</button>
+                                            <button type="submit" class="btn btn-primary">Purchase</button>
                                         </form>
                                     </div>
                                 </div>

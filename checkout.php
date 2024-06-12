@@ -1,3 +1,17 @@
+<?php
+
+// Check if product ID is set in the URL
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Retrieve form data using $_POST superglobal
+  $productskuid = $_POST["productskuid"];
+
+} else {
+  // Redirect if feilds not set
+  header("Location: error.php");
+  exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -15,26 +29,52 @@
 </head>
 
 <body>
-
-
-
   <?php include 'navbar.php'; ?>
 
-  <div class="input-group mb-3">
-    <input type="text" id="username" name="username" class="form-control" placeholder="Username" aria-label="Username"
-      aria-describedby="basic-addon1">
+  <div class="container" style="padding: 40px;">
+    <div class="cointainer-fluid">
+      <div class="row justify-content-center">
+        <!-- checkout -->
+        <div class="col-sm-3">
+          <div class="card" style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Place Your Order</h5>
+
+              <div class="input-group mb-3">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username"
+                  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="date" id="devdate" name="devdate" class="form-control" aria-label="devdate"
+                  aria-describedby="basic-addon1">
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="text" id="ordersize" name="ordersize" class="form-control" placeholder="Amount to Purchase"
+                  aria-label="ordersize" aria-describedby="basic-addon1">
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="text" id="address" name="address" class="form-control" placeholder="Adress to Deliver to"
+                  aria-label="address" aria-describedby="basic-addon1">
+              </div>
+
+              <form action="purchasecomplete.php" method="post" id="addorder-btn">
+                <input type="hidden" name="productskuid" value= "<?php echo htmlspecialchars($productskuid); ?>" id="hidden-productskuid">
+                <input type="hidden" name="username" value="" id="hidden-username">
+                <input type="hidden" name="devdate" value="" id="hidden-devdate">
+                <input type="hidden" name="ordersize" value="" id="hidden-ordersize">
+                <input type="hidden" name="address" value="" id="hidden-address">
+                <button type="submit" class="btn btn-primary">Place Order</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="input-group mb-3">
-    <input type="text" id="password" name="password" class="form-control" placeholder="Password" aria-label="Password"
-      aria-describedby="basic-addon1">
-  </div>
-
-  <form action="addemployee.php" method="post">
-    <input type="hidden" name="username" value="" id="hidden-username">
-    <input type="hidden" name="password" value="" id="hidden-password">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 
   <?php include 'footer.php'; ?>
 
@@ -52,16 +92,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 </body>
+<!-- Place the order  -->
 <script>
-    // JavaScript to set hidden input values before form submission
-    document.querySelector('form').addEventListener('submit', function (event) {
-        // Get username and password values from input fields
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
+  // JavaScript to set hidden input values before form submission
+  document.getElementById('addorder-btn').addEventListener('submit', function (event) {
+    // Get username and password values from input fields
+    var username = document.getElementById('username').value;
+    var devdate = document.getElementById('devdate').value;
+    var ordersize = document.getElementById('ordersize').value;
+    var address = document.getElementById('address').value;
 
-        // Set the values to the hidden input fields
-        document.getElementById('hidden-username').value = username;
-        document.getElementById('hidden-password').value = password;
-    });
+    // Set the values to the hidden input fields
+    document.getElementById('hidden-username').value = username;
+    document.getElementById('hidden-devdate').value = devdate;
+    document.getElementById('hidden-ordersize').value = ordersize;
+    document.getElementById('hidden-address').value = address;
+  });
 </script>
+
 </html>

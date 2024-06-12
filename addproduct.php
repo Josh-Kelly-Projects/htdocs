@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Database configuration
     $servername = "localhost";
-    $sqlusername = "root";
+    $sqlusername = "id22309664_root";
     $sqlpassword = "1234Good!";
     $database = "id22309664_biodxdb";
 

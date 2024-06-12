@@ -1,7 +1,7 @@
 <?php
 // Database configuration
 $servername = "localhost";
-$dbusername = "root";
+$dbusername = "id22309664_root";
 $password = "1234Good!";
 $database = "id22309664_biodxdb";
 

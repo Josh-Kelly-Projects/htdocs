@@ -41,7 +41,7 @@ if (isset($_POST['product_id'])) {
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Database configuration
                     $servername = "localhost";
-                    $username = "root";
+                    $username = "id22309664_root";
                     $password = "1234Good!";
                     $database = "id22309664_biodxdb";
 

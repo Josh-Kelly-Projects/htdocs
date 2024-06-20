@@ -177,7 +177,7 @@
 <script>
     // JavaScript to set hidden input values before form submission
     document.getElementById('employee-btn').addEventListener('submit', function (event) {
-        // Get username and password values from input fields
+        // Get the values from input fields
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
 
@@ -190,7 +190,7 @@
 <script>
     // JavaScript to set hidden input values before form submission
     document.getElementById('product-btn').addEventListener('submit', function (event) {
-        // Get username and password values from input fields
+        // Get the values from input fields
         var productname = document.getElementById('productname').value;
         var productdescription = document.getElementById('productdescription').value;
 
@@ -203,7 +203,7 @@
 <script>
     // JavaScript to set hidden input values before form submission
     document.getElementById('sku-btn').addEventListener('submit', function (event) {
-        // Get username and password values from input fields
+        // Get the values from input fields
         var concentration = document.getElementById('concentration').value;
         var skudescription = document.getElementById('skudescription').value;
         var productid = document.getElementById('productid').value;
@@ -220,7 +220,7 @@
 <script>
     // JavaScript to set hidden input values before form submission
     document.getElementById('payment-btn').addEventListener('submit', function (event) {
-        // Get username and password values from input fields
+        // Get the values from input fields
         var orderid = document.getElementById('orderid').value;
 
         // Set the values to the hidden input fields

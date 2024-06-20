@@ -49,7 +49,7 @@
                 type: 'GET',
                 data: { username: username }, // Send the username as a parameter
                 success: function (response) {
-                    $('#cardContainer').html(response); // Append cards to card container
+                    $('#cardContainer').html(response); // Add cards to card container
                 },
                 error: function (xhr, status, error) {
                     console.error(xhr.responseText);
